@@ -29,6 +29,7 @@ The user will provide a vulnerability or security event. Extract:
 - **Identifier**: CVE ID (e.g., CVE-2025-12345), vendor advisory ID, threat actor name, or event description
 - **Type**: Is this a CVE/vulnerability advisory or a threat campaign/security event advisory?
 - **Context clues**: Any initial severity signals, affected products, or exploitation status already known
+- **Provided URLs**: Did the user include a specific link to a blog post, news article, or vendor advisory?
 
 If the input is ambiguous (e.g., just a CVE number with no context), proceed to research — don't ask the user before looking it up.
 
@@ -38,8 +39,11 @@ If the input is ambiguous (e.g., just a CVE number with no context), proceed to 
 
 ### Step 2a: Gather information from multiple sources
 
-Search for the vulnerability or security event using the `search_web` tool. For CVEs, check:
+**Provided References & Mandatory Search**: If the user provided a specific URL in their prompt, you MUST use the `read_url_content` tool to read its contents first as a baseline reference. However, you MUST STILL ALWAYS perform web searches to augment this intelligence. Do not rely solely on the provided URL; actively search to build a complete and authoritative picture of the event.
 
+**If the `tavily-search` tool is available in your environment, prioritize using it**, as it provides enhanced research capabilities. Otherwise, fall back to the standard `search_web` tool. 
+
+For CVEs, check:
 1. NVD (nvd.nist.gov) for official CVSS score, description, and CWE
 2. Vendor advisory (e.g., Microsoft, Fortinet, Cisco, Palo Alto)
 3. Security research blogs (e.g., BleepingComputer, The Hacker News, Securelist, Rapid7, Tenable, Qualys, Mandiant)
