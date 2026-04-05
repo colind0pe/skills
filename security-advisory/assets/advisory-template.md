@@ -28,22 +28,26 @@ Dear [Client],
 
 * [Product]: [Version ranges]
 
-[IOCs — include only if IOCs are available. Use a bulleted list.]
+**IOCs**
+
+[Include this section only if IOCs are available.]
 * **[IP/hash/domain/email/filename]**: [defanged indicator] - [description]
 
-Remediation
+**Remediation**
 
 * [Client] [Specific patch action with version numbers]
 * [Client] [Workaround if patch unavailable]
 * [EnSOC] [Monitoring/detection action]
 
-Recommendations
+**Recommendations**
 
 * [Client] [Hardening or awareness action]
 * [EnSOC] [Additional monitoring]
 
-## References
+**References**
 
 1. [Actual Source Name] – [Actual URL found during search]
 2. [Actual Vendor Advisory] – [Actual URL found during search]
 3. [Actual News Article] – [Actual URL found during search]
+
+If you have any questions or require further assistance, please do not hesitate to contact us.
