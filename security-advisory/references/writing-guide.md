@@ -39,14 +39,16 @@ The template in `assets/advisory-template.md` defines the exact section order an
 - If a PoC exists, note whether it's public or private
 
 ### Affected Versions
-- Use exact version numbers (e.g., `4.0 through 4.21.8`), not vague ranges
-- For cloud/managed services, describe the exposure condition instead
-- Use a table when multiple products are affected
+- Use exact version numbers (e.g., `4.0 – 4.21.8`), not vague ranges
+- Always render as a Markdown table with columns: **Product | Affected Versions | Fixed Version**
+- If no fix is available yet, write "None — see workaround" in the Fixed Version column
+- For cloud/managed services, add a **Notes** column and describe the exposure condition there
 
 ### IOCs
-- Include only when IOCs are actually available — omit this section entirely otherwise
-- Always defang IPs with `[.]` notation (e.g., `104.28.244[.]115`)
-- Format each IOC as: `**[Type]**: [defanged indicator] - [description]`
+- Include only when IOCs are actually available
+- Always defang IPs and domains with `[.]` notation (e.g., `104.28.244[.]115`)
+- Render as a Markdown table with columns: **Type | Indicator | Description**
+- Valid Type values: `IP`, `Domain`, `File Hash (MD5/SHA256)`, `Email`, `Filename`, `URL`
 
 ### Remediation
 - Every action item must be tagged with `[Client]` or `[EnSOC]` to assign responsibility:

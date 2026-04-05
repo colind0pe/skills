@@ -26,12 +26,17 @@ Dear [Client],
 
 **Affected Versions**
 
-* [Product]: [Version ranges]
+| Product | Affected Versions | Fixed Version |
+| ------- | ----------------- | ------------- |
+| [Product Name] | [e.g., 4.0 – 4.21.8] | [e.g., 4.21.9] |
 
 **IOCs**
 
 [Include this section only if IOCs are available.]
-* **[IP/hash/domain/email/filename]**: [defanged indicator] - [description]
+
+| Type | Indicator | Description |
+| ---- | -------------------- | ----------- |
+| [IP / Domain / Hash / Email / Filename] | [e.g., 104.28.244[.]115] | [Brief description] |
 
 **Remediation**
 
